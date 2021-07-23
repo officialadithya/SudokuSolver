@@ -197,12 +197,12 @@ bool isValid(int board[BOARD_SIZE][BOARD_SIZE], int rowIndex, int colIndex, int 
 
     // Return False if Duplicate Found in Row | Column Index Changes
     for (int i = 0; i < BOARD_SIZE; i++) {
-        if (board[rowIndex][i] == placement) return false;
+        if (board[rowIndex][i] == placement && colIndex != i) return false;
     }
 
     // Return False if Duplicate Found in Column | Row Index Changes
     for (int i = 0; i < BOARD_SIZE; i++) {
-        if (board[i][colIndex] == placement) return false;
+        if (board[i][colIndex] == placement && rowIndex != i) return false;
     }
 
 	// Integer Division to Find Which Square to Search (Think of a 2D Array of the Squares)
@@ -212,7 +212,7 @@ bool isValid(int board[BOARD_SIZE][BOARD_SIZE], int rowIndex, int colIndex, int 
 	// Iterate Over the Square & Return False if Duplicate Found in Square (Algorithm by Tech With Tim)
 	for (int i = sqrRow*3; i < sqrRow*3+3; i++) {
 		for (int j = sqrCol*3; j < sqrCol*3+3; j++) {
-			if (board[i][j] == placement) return false;
+			if (board[i][j] == placement && colIndex != j && rowIndex != i) return false;
 		}
 	}
 
