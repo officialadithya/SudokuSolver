@@ -48,12 +48,12 @@ int main() {
     readBoard(FILENAME, board);
     
     cout << "The Board to Solve:" << endl;
-	printBoard(board);
+    printBoard(board);
 
-	cout << endl;
+    cout << endl;
     solve(board);
 
-	cout << "The Solved Board:" << endl;
+    cout << "The Solved Board:" << endl;
     printBoard(board);
 
     return 0;
